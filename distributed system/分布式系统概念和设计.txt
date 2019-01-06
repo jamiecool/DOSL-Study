@@ -1,0 +1,29 @@
+1.CHARACTERIZATION OF DISTRIBUTED SYSTEMS 分布式系统的特性：
+
+我们将分布式系统定义为位于网络计算机上的硬件或软件组件仅通过传递消息进行通信和协调其操作的系统。
+A distributed system is one in which components located at networked computers
+communicate and coordinate their actions only by passing messages.
+
+concurrency of components 组件并发 --共享资源在并发中的协调
+
+lack of a global clock 缺乏全局时钟
+
+independent failures of components 组件故障独立？ --控制结点故障的传播范围
+
+The challenges arising from the construction of distributed systems are 
+1.the heterogeneity of their components,
+2.openness (which allows components to be added or replaced), 
+3.security, 
+4.scalability – the ability to work well when the load or the number of users increases
+5.failure handling, 
+6.concurrency of components, 
+7.transparency ,
+8.providing quality of service.
+
+构建和使用分布式系统的主要动机源于共享资源的愿望。
+
+“资源”这个术语相当抽象，但是它最好地描述了在网络计算机系统中可以有效地共享的东西的范围。
+它包括从硬件组件(如磁盘和打印机)扩展到软件定义实体(如文件、数据库和各种数据对象)。
+它包括来自数字摄像机的视频帧流和移动电话所代表的音频连接。
+
+	
