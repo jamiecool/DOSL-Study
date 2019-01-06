@@ -1,0 +1,67 @@
+仿真即实验
+	实验帧 动态系统 
+	designer
+	the experimental frame is a ’specification of the conditions under which
+the system is observed or experimented with’.
+
+	treatments
+	a collection of treatments, where each treatment comprises an ini-
+tial state, run control parameters and an observational frame.
+
+	observer
+	
+	player
+	
+	action frame
+	
+	Whereas the model defines structure and behaviour, 
+	模型定义结构和行为
+	the simulator actually brings the model behaviour about by executing the model in a time controlled manner.
+	仿真器通过执行以仿真时间为序列的模型行为来获取模型的行为
+	
+	discretionizing the overall behaviour into events
+	仿真器和模型之间需要通过某种contract来约定通信机制
+	
+	DEVS concept：
+	X --inout values;
+	Y --output values;
+	S --state,which is a function of an incoming value and of the internal transition function 接收模型的输入和内部转换 的功能；
+	ta(S) time advanced -- which defines the time for the next internal state transition.
+	 ??? The model output (Y)is defined to be a function of the model’s state only.
+	 
+模型的模块化 层次化：
+	model to be a monolithic entity
+	
+	multi-component model connected by event ports；多组件模型通过事件端口连接
+	
+	event propagation is facilitated by the DEVS simulator 事件通过DEVS仿真器辅助传播
+	
+	The concept of event ports further more allows for modularity 事件端口的理念给模型的模块化带来了方便，限制组件之间的交互只能通过事件关联
+	
+	separation of concerns and freedom of implementation 功能隔离、释放实现--模块化的好处--复杂业务系统建模的关键因素
+	
+	Modularity is maintained by restricting internal models to connect only to event ports of or internal to the parent model--模块化的实现！
+	
+面向多范式的仿真：
+...
+
+DSOL仿真：
+ this simulator is set up as a remotely accessible service --分布式
+ 
+ Remote method invocation scheduling --远程方法调用机制
+ 
+ The scheduled method invocation must map on the scheduled state change illustrated in figure 3.
+ A SimEvent illustrated in figure 6 maps the event introduced by the DEVS framework.
+ 
+ SimEvent 
+ -executionTime : double
+ -target : Object
+ -method : SerializedMethod
+ -arguments : Object[]
+ +execute(): void 
+ +getExecutionTime() : double 
+	
+	
+	
+ 
+  

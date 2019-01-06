@@ -26,4 +26,15 @@ The challenges arising from the construction of distributed systems are
 它包括从硬件组件(如磁盘和打印机)扩展到软件定义实体(如文件、数据库和各种数据对象)。
 它包括来自数字摄像机的视频帧流和移动电话所代表的音频连接。
 
+
+快速响应时间以保持游戏的用户体验
+将事件实时传播给多个参与者，并维护共享世界的一致视图
+
+client-server approach 
+cluster approaches
+
+decentralized approaches peer-to-peer solutions
+
+distributed event-based systems.
+
 	
