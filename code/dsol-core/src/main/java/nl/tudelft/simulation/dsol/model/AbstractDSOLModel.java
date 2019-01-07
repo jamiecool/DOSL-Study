@@ -56,7 +56,7 @@ public abstract class AbstractDSOLModel<A extends Comparable<A>, R extends Numbe
     /** the output statistics. */
     @SuppressWarnings("checkstyle:visibilitymodifier")
     protected List<OutputStatistic<?>> outputStatistics = new ArrayList<>();
-
+    
     /**
      * Construct a DSOL model and set the simulator.
      * @param simulator SimulatorInterface&lt;A, R, T&gt;; the simulator to use for this model
@@ -119,7 +119,7 @@ public abstract class AbstractDSOLModel<A extends Comparable<A>, R extends Numbe
      * Easy access class AbstractDSOLModel.TimeDouble.
      * @param <S> the simulator type to use
      */
-    public abstract static class TimeDouble<S extends SimulatorInterface.TimeDouble>
+    public static abstract class TimeDouble<S extends SimulatorInterface.TimeDouble>
             extends AbstractDSOLModel<Double, Double, SimTimeDouble, S> implements DSOLModel.TimeDouble<S>
     {
         /** */
@@ -133,6 +133,7 @@ public abstract class AbstractDSOLModel<A extends Comparable<A>, R extends Numbe
         {
             super(simulator);
         }
+        
     }
 
     /**
