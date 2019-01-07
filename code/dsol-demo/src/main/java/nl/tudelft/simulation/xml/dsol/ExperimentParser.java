@@ -28,6 +28,7 @@ import nl.tudelft.simulation.dsol.logger.SimLogger;
 import nl.tudelft.simulation.dsol.model.DSOLModel;
 import nl.tudelft.simulation.dsol.simtime.SimTimeDouble;
 import nl.tudelft.simulation.dsol.simulators.DEVSAnimator;
+import nl.tudelft.simulation.dsol.simulators.DEVSSimulator;
 import nl.tudelft.simulation.dsol.simulators.SimulatorInterface;
 import nl.tudelft.simulation.jstats.streams.MersenneTwister;
 import nl.tudelft.simulation.jstats.streams.StreamInterface;
@@ -56,7 +57,7 @@ public class ExperimentParser
         // Let's find the XSD file
         String xsd = URLResource.getResource("/xsd/experiment.xsd").toExternalForm();
         builder.setProperty("http://apache.org/xml/properties/schema/external-schemaLocation",
-                "https://simulation.tudelft.nl " + xsd);
+                "http://www.simulation.tudelft.nl " + xsd);
     }
 
     /**
@@ -176,14 +177,15 @@ public class ExperimentParser
             // XXX: END TO REMOVE
 
             Class<?> modelClass = Class.forName(modelClassName, true, loader);
-            DSOLModel.TimeDouble model =
-                    (DSOLModel.TimeDouble) ClassUtil.resolveConstructor(modelClass, null).newInstance();
+            //System.out.println(ClassUtil.resolveConstructor(modelClass, new Class<?>[]{Class.forName("nl.tudelft.simulation.dsol.simulators.DEVSSimulator$TimeDouble")}));
+            
+                    //(DSOLModel.TimeDouble) ClassUtil.resolveConstructor(modelClass, null).newInstance();
 
             // resolve the SIMULATOR-CLASS element
             SimulatorInterface.TimeDouble simulator = null;
             if (modelElement.getChild("simulator-class") == null)
             {
-                simulator = new DEVSAnimator.TimeDouble();
+                simulator = new DEVSSimulator.TimeDouble();
             }
             else
             {
@@ -191,6 +193,7 @@ public class ExperimentParser
                 simulator = (SimulatorInterface.TimeDouble) ClassUtil.resolveConstructor(simulatorClass, null)
                         .newInstance();
             }
+            DSOLModel.TimeDouble model =(DSOLModel.TimeDouble) ClassUtil.resolveConstructor(modelClass, new Class<?>[]{Class.forName("nl.tudelft.simulation.dsol.simulators.DEVSSimulator$TimeDouble")}).newInstance((simulator));
 
             // Define the experiment
             Experiment.TimeDouble experiment = new Experiment.TimeDouble(null, simulator, model);
