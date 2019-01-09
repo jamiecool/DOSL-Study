@@ -17,9 +17,9 @@
       </replication>
     </replications>
     <treatment>
-    	
+    	<!-- <startTime>2004-09-01T00:00:00</startTime> -->
       	<timeUnit>MINUTE</timeUnit>
-      	<warmupPeriod unit="MINUTE">0</warmupPeriod>
+      	<warmupPeriod unit="MINUTE">1</warmupPeriod>
       	<runLength unit="MINUTE">10</runLength>
     </treatment>
   </experiment>

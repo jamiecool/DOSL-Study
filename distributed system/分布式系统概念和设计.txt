@@ -46,4 +46,106 @@ distributed event-based systems.
 
 为了有效地共享，每个资源必须由一个程序来管理，该程序提供一个通信接口，使资源能够可靠地、一致地访问和更新。
 
+
+
+分布式系统--系统模型：
+物理模型
+	考虑构成系统的计算机和设备的类型及其互连性，而不考虑特定技术的细节。
+体系结构模型 
+	根据计算元素执行的计算和通信任务来描述系统;计算元素是由适当的网络互连所支持的单个计算机或它们的集合；
+	Client-Server和Peer-to-Peer是分布式系统中最常用的两种体系结构模型形式。
+基础模型
+	采用抽象的视角来描述大多数分布式系统所面临的单个问题的解决方案。
+
+计算机网络上的消息通信可能受到延迟的影响，可能遭受各种故障，并且容易受到安全攻击。这些问题由三个模型来解决：
+交互模型（The interaction model ）
+	交互模型处理性能和在分布式系统中设置时间限制的困难，例如消息传递。
+故障模型（The failure model）
+	该故障模型试图对流程和通信通道所能显示的故障给出精确的描述。它定义了可靠的通信和正确的流程。
+安全模型（The security model ）
+	安全模型讨论流程和通信通道可能受到的威胁。它引入了安全通道的概念，安全通道可以抵御这些威胁。
+	
+每种类型的模型都旨在提供分布式系统设计相关方面的抽象化的、简化的但一致的 描述。
+
+体系结构元素：
+问题：（通信实体）
+	分布式系统中通信的实体是什么？ --- 通信实体
+	分布式系统中实体如何通信？或者说通信的范式是什么？ --- 通信范式
+	通信实体的角色和职责是什么？
+	通信实体是如何映射到分布式的物理节点的？
+
+通信实体：
+	From a system perspective : process ？
+	In some primitive environments : nodes ?
+	In most distributed system environments : threads? --严格地说，线程是通信的端点.
+	
+	From a programming perspective, more problem-oriented abstractions have been
+proposed:
+	Objects  -- 分布式对象已经成为分布式系统研究的一个重要领域;
+	Components -- 组件类似于对象，它们为构建分布式系统提供面向问题的抽象，也可以通过接口进行访问;
+	Web services -- Web服务与对象和组件密切相关，同样采用基于行为封装和通过接口访问的方法;
+	
+通信范式 -- Communication paradigms：
+	interprocess communication  -- 进程间通信
+	
+	remote invocation -- 远程调用
+		-Remote procedure calls（RPC）可以像调用本地地址空间中的过程一样调用远程计算机进程中的过程。
+		-Remote method invocation（RMI）远程方法调用(RMI)与远程过程调用非常相似，但是是在分布式对象的世界中。
+	
+	与此相反，出现了一些通过第三个实体进行间接通信的技术，使发送方和接收方之间有了很大程度的解耦:间接通信
+	indirect communication -- 间接通信
+		发送方不需要知道发送给谁(空间解耦)。
+		发送方和接收方不需要同时存在(时间解耦)。
+		间接交流的关键技术包括：
+			Group communication
+			Publish-subscribe systems
+			Message queues
+			Tuple spaces
+			Distributed shared memory
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
