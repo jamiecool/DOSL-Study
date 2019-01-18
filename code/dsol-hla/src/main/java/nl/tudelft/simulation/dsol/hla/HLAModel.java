@@ -73,7 +73,6 @@ public class HLAModel extends DSOLFederateAmbassador implements DSOLModel
     }
 
     /** {@inheritDoc} */
-    @Override
     public void constructModel(final SimulatorInterface arg0) throws SimRuntimeException
     {
         try

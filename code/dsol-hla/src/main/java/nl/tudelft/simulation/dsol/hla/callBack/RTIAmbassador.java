@@ -248,7 +248,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public int getInteractionClassHandle(String arg0) throws NameNotFound, FederateNotExecutionMember, RTIinternalError
     {
         return this.target.getInteractionClassHandle(arg0);
@@ -276,7 +275,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public void createFederationExecution(String federationExecutionName, URL fdd, boolean callBack)
             throws FederationExecutionAlreadyExists, CouldNotOpenFED, ErrorReadingFED, RTIinternalError,
             ConcurrentAccessAttempted
@@ -353,7 +351,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public void registerFederationSynchronizationPoint(String synchronizationPointLabel, byte[] userSuppliedTag,
             boolean callBack) throws FederateNotExecutionMember, SaveInProgress, RestoreInProgress, RTIinternalError,
             ConcurrentAccessAttempted
@@ -969,7 +966,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public void synchronizationPointAchieved(final String synchronizationPointLabel, boolean callBack)
             throws SynchronizationLabelNotAnnounced, FederateNotExecutionMember, SaveInProgress, RestoreInProgress,
             RTIinternalError, ConcurrentAccessAttempted
@@ -986,7 +982,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public void federateRestoreNotComplete() throws RestoreNotRequested, FederateNotExecutionMember, SaveInProgress,
             RTIinternalError, ConcurrentAccessAttempted
     {
@@ -995,7 +990,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public void subscribeInteractionClassPassively(int arg0)
             throws InteractionClassNotDefined, FederateNotExecutionMember, FederateLoggingServiceCalls, SaveInProgress,
             RestoreInProgress, RTIinternalError, ConcurrentAccessAttempted
@@ -1040,7 +1034,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public String getInteractionClassName(int arg0)
             throws InteractionClassNotDefined, FederateNotExecutionMember, RTIinternalError
     {
@@ -1118,7 +1111,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public int getObjectClassHandle(String arg0) throws NameNotFound, FederateNotExecutionMember, RTIinternalError
     {
         return this.target.getObjectClassHandle(arg0);
@@ -1145,7 +1137,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public int joinFederationExecution(String arg0, String arg1, FederateAmbassador arg2)
             throws FederateAlreadyExecutionMember, FederationExecutionDoesNotExist, SaveInProgress, RestoreInProgress,
             RTIinternalError, ConcurrentAccessAttempted
@@ -1154,7 +1145,6 @@ public class RTIAmbassador
     }
 
     /** {@inheritDoc} */
-    @Override
     public int joinFederationExecution(String arg0, String arg1, FederateAmbassador arg2, MobileFederateServices arg3)
             throws FederateAlreadyExecutionMember, FederationExecutionDoesNotExist, SaveInProgress, RestoreInProgress,
             RTIinternalError, ConcurrentAccessAttempted
